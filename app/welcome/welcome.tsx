@@ -1,13 +1,13 @@
+import type { Route } from "./+types/welcome";
 import { Select } from "~/select";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
-export function Welcome() {
-  const options = [
-    { value: "apple", label: "Apple" },
-    { value: "banana", label: "Banana" },
-    { value: "orange", label: "Orange" },
-  ];
+export function Welcome({
+  options,
+}: {
+  options: Route.ComponentProps["loaderData"]["options"];
+}) {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
